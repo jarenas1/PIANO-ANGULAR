@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '01_piano';
+  public title = '01_piano';
+
+  playSound(note: string){
+    const audio = new Audio(`../assets/sounds/${note}.wav`);
+    audio.load();
+    audio.play();
+  }
 }
